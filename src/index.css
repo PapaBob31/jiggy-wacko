@@ -1,2 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --font-caveat: "Caveat", cursive;
+  --font-titan: "Titan One", sans-serif;
+  --font-stanlinist: "Stalinist One", sans-serif;
+  --font-aldrich: "Aldrich", sans-serif;
+  --font-black-ops: "Black Ops One", system-ui;
+  --font-rock-salt: "Rock Salt", cursive;
+  --font-inter: "Inter", sans-serif;
+}

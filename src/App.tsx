@@ -1,18 +1,5 @@
 import { ArrowUpRight } from "lucide-react"
 
-function NavBar() {
-  return (
-    <nav className="fixed top-0 w-[80vw] left-[10vw] z-30 text-white pt-4 text-center font-medium flex items-center gap-16">
-      <a href="Home">HOME</a>
-      <a href="Jerseys">JERSEYS</a>
-      <a href="Tees">TEES</a>
-      <a href="Joggers">JOGGERS</a>
-      <a href="Jeans">JEANS</a>
-      <a href="Caps">CAPS</a>
-    </nav>
-  )
-}
-
 function JerseySection() {
   return  (
     <section className="w-[80vw] mx-auto">
@@ -38,7 +25,7 @@ function JoggersSection() {
   return (
     <section className="bg-gray-100 mt-10">
       <div className="w-[80vw] mx-auto flex justify-between gap-4 py-4 items-center">
-        <img className="w-[40vw] h-[30vw] object-cover" src="/assets/joggers-1.jpg"/>
+        <img className="w-[40vw] h-[30vw] object-cover" src="/assets/black-joggers.jpg"/>
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-2">JW Joggers</h2>
           <p className="min-w-100 w-[30vw] mb-2">Step out in comfort and style. Joggers that would do this and that.Very long paragraph about how good the joggers are</p>
@@ -52,7 +39,7 @@ function JoggersSection() {
 function ModelsSection() {
   return (
     <section className="w-[80vw] mx-auto relative mt-10 pt-12">
-      <h3 className="w-full text-center z-10 absolute top-0 text-gray-300 font-bold text-9xl tracking-[1rem]">JIGGY WACKO</h3>
+      <h3 className="font-stanlinist w-full text-center z-10 absolute top-6 text-gray-400 text-8xl ">JIGGY WACKO</h3>
       <div className="relative z-20 flex justify-between items-start">
         <img className="w-70 h-auto" src="/assets/model-7.png"/>
         {/*<img className="w-50 h-auto" src="/assets/model-2.webp"/>*/}
@@ -121,16 +108,15 @@ function Catalog() {
 
 export default function LandingPage() {
   const newArrivals = [
-    {name: `JW SLICK 💋 WEARS`, price: "--", imgUrl: "/assets/vest-1.jpg"},
-    {name: `JW Smiley head Tees`, price: "--", imgUrl: "/assets/smiley-tee.jpg"},
-    {name: `JW Don't Care tees`, price: "--", imgUrl: "/assets/vest-1.jpg"},
-    {name: `JW BLAC SLIM Joggers`, price: "--", imgUrl: "/assets/vest-1.jpg"},
-    {name: `JW x RJ BLAC JERSEY`, price: "--", imgUrl: "/assets/joggers-1.jpg"},
-    {name: `JW REAL SHI TEES`, price: "--", imgUrl: "/assets/vest-1.jpg"}
+    {name: `JW SLICK 💋 WEARS`, price: 20000, imgUrl: "/assets/vest-1.jpg"},
+    {name: `JW Smiley head Tees`, price: 20000, imgUrl: "/assets/smiley-tee.jpg"},
+    {name: `JW Don't Care tees`, price: 20000, imgUrl: "/assets/jw-dc-tees.jpg"},
+    {name: `JW BLAC SLIM Joggers`, price: 20000, imgUrl: "/assets/black-joggers.jpg"},
+    {name: `JW x RJ BLAC JERSEY`, price: 20000, imgUrl: "/assets/jersey-8.jpg"},
+    {name: `JW REAL SHI TEES`, price: 20000, imgUrl: "/assets/real-shi-tee.jpg"}
   ]
 
   return (<>
-    <NavBar/>
     <div>
       <section className="bg-black h-screen relative mb-60">
         <div className="flex w-[80vw] h-full mx-auto items-center">
@@ -145,10 +131,12 @@ export default function LandingPage() {
         <h2 className="text-neutral-300 text-lg font-semibold w-[80vw] mx-auto mb-1">New Arrivals</h2>
         <ul className="grid grid-cols-6 w-[80vw] mx-auto gap-4">
           {newArrivals.map(cloth => (
-            <li className="bg-neutral-400 p-2 rounded-lg h-80">
-              <img src={cloth.imgUrl} className="rounded-lg w-full h-60 object-cover"/>
-              <h3>{cloth.name}</h3>
-              <p>{(typeof cloth) === "string" ? cloth.price : cloth.price.toLocaleString()}₦</p>
+            <li className="bg-linear-to-b from-neutral-400 to-neutral-100 p-2 rounded-lg h-80 hover:shadow-gray-400 hover:shadow-sm cursor-pointer">
+              <div className="overflow-hidden w-full rounded-lg">
+                <img src={cloth.imgUrl} className="block hover:scale-125 duration-300 w-full h-60 object-cover"/>
+              </div>
+              <h3 className="uppercase font-caveat font-bold mt-2">{cloth.name}</h3>
+              <p className="text-gray-500 font-medium">₦{(typeof cloth) === "string" ? cloth.price : cloth.price.toLocaleString()}</p>
             </li>
           ))}
         </ul>

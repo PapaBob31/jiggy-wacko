@@ -1,4 +1,5 @@
-import { Search, X } from "lucide-react";
+import { Search, X, ChevronRight, ChevronLeft } from "lucide-react";
+import { useState } from "react"
 
 function FullProductView() {
 	return (
@@ -42,79 +43,159 @@ function FullProductView() {
 }
 
 
+interface ProductData {
+	name: string;
+	imgUrls: string[];
+	for: string[],
+	price: number
+}
+
+`-translate-x-[100%] -translate-x-[200%] -translate-x-[300%] -translate-x-[400%] 
+translate-x-[100%] translate-x-[200%] translate-x-[300%]translate-x-[400%]`
+
+function DisplayedProduct({ productIndex, product } : {productIndex: number, product: ProductData}) {
+	const [slidesMoved, setSlidesMoved] = useState(0);
+
+	function moveSlidesRight() {
+		setSlidesMoved(slidesMoved => slidesMoved + 1)
+	}
+
+	function moveSlidesLeft() {
+		setSlidesMoved(slidesMoved => slidesMoved - 1)
+	}
+	return (
+		<li key={productIndex} className="cursor-pointer relative">
+			<div className="relative">
+				<ul className="flex flex-nowrap overflow-x-hidden w-full h-70">
+					{product.imgUrls.map((url, i) => (
+						<li key={i} className={`w-full h-full duration-300 shrink-0 ${slidesMoved < 0 ? "-" : ""}translate-x-[${100 * Math.abs(slidesMoved)}%]`}>
+							<img className="h-full w-full block" src={url}/>
+						</li>
+					))}
+				</ul>
+				<div className="w-full absolute bottom-1 flex justify-center gap-1">
+					{product.imgUrls.map((_url, i) => (
+						<button key={i} 
+							className={`${Math.abs(slidesMoved) === i ? "bg-black" : "bg-white"} border-[1px] border-white h-[8px] w-[8px] rounded-full`}></button>
+					))}
+				</div>
+			</div>
+			<h3 className="font-semibold mt-1">{product.name}</h3>
+			<span className="text-neutral-800">₦{product.price.toLocaleString()}</span>
+			<button onClick={moveSlidesRight} disabled={slidesMoved == 0} className="absolute top-[45%] left-2 p-1 cursor-pointer">
+				<ChevronLeft className="text-black" size={18}/>
+			</button>
+			<button onClick={moveSlidesLeft} disabled={slidesMoved == product.imgUrls.length} 
+				className="absolute top-[45%] right-2 p-1 cursor-pointer">
+				<ChevronRight className="text-black" size={18}/>
+			</button>
+		</li>
+	)
+}
+
+
 export default function Page() {
 	const productsData = [
 		{
-			name: "Jersey 1",
-			imgUrl: "/assets/jersey-1.jpg",
+			name: "JERSEY 1",
+			imgUrls: ["/assets/jersey-1.jpg", "/assets/jersey-1-back.jpg"],
 			for: ["MEN", "WOMEN"],
+			color: "BLACK",
 			price: 20000
 		}, 
 		{
-			name: "Jersey 2",
-			imgUrl: "/assets/jersey-2.jpg",
+			name: "JERSEY 2",
+			imgUrls: ["/assets/jersey-2.jpg", "/assets/jersey-1-back.jpg"],
 			for: ["MEN", "WOMEN"],
+			color: "BLACK",
 			price: 20000
 		}, 
 		{
-			name: "Jersey 3",
-			imgUrl: "/assets/jersey-3.jpg",
+			name: "JERSEY 3",
+			imgUrls: ["/assets/jersey-3.jpg", "/assets/jersey-3-back.jpg"],
 			for: ["MEN", "WOMEN"],
+			color: "RED",
 			price: 20000
 		}, 
 		{
-			name: "Jersey 4",
-			imgUrl: "/assets/jersey-3.jpg",
+			name: "JERSEY 4",
+			imgUrls: ["/assets/jersey-5.jpg", "/assets/jersey-1-back.jpg"],
 			for: ["MEN", "WOMEN"],
+			color: "BLACK",
+			price: 20000
+		},
+		{
+			name: "JERSEY 5",
+			imgUrls: ["/assets/jersey-3.jpg", "/assets/jersey-3-back.jpg"],
+			for: ["MEN", "WOMEN"],
+			color: "BLACK",
+			price: 20000
+		},
+		{
+			name: "JERSEY 6",
+			imgUrls: ["/assets/jersey-8.jpg", "/assets/jersey-1-back.jpg"],
+			for: ["MEN", "WOMEN"],
+			color: "RED",
+			price: 20000
+		},
+		{
+			name: "JERSEY 7",
+			imgUrls: ["/assets/jersey-3.jpg", "/assets/jersey-3-back.jpg"],
+			for: ["MEN", "WOMEN"],
+			color: "BLACK",
+			price: 20000
+		},
+		{
+			name: "JERSEY 8",
+			imgUrls: ["/assets/jersey-3.jpg", "/assets/jersey-3-back.jpg"],
+			for: ["MEN", "WOMEN"],
+			color: "RED",
+			price: 20000
+		}, 
+		{
+			name: "JERSEY 9",
+			imgUrls: ["/assets/jersey-3.jpg", "/assets/jersey-3-back.jpg"],
+			for: ["MEN", "WOMEN"],
+			color: "RED",
+			price: 20000
+		},
+		{
+			name: "JERSEY 10",
+			imgUrls: ["/assets/jersey-3.jpg", "/assets/jersey-3-back.jpg"],
+			for: ["MEN", "WOMEN"],
+			color: "RED",
 			price: 20000
 		}
 	]
 
 	return (<>
-		<div className="w-[80vw] mx-auto flex gap-10 items-center border-b border-b-gray-200 py-1">
-			<a href=""><img src="/assets/logo.png" className="w-12"/></a>
-			<div className="grow focus-within:outline-2 focus-within:outline-gray-500 p-1 outline-1 outline-gray-400 rounded-2xl flex gap-2 items-center">
-				<Search size={20}/>
-				<input type="text" placeholder="search Jerseys..." className="outline-none w-full"/>
-			</div>
-			<nav className="text-gray-600 font-medium flex gap-4 text-sm">
-				<a href="Home">HOME</a>
-	      <a href="Jerseys">JERSEYS</a>
-	      <a href="Tees">TEES</a>
-	      <a href="Joggers">JOGGERS</a>
-	      <a href="Jeans">JEANS</a>
-	      <a href="Caps">CAPS</a>
-			</nav>
-		</div>
-		<section className="w-[80vw] mx-auto py-2">
-			<div className="w-full rounded-lg overflow-hidden relative px-4 pt-8 pb-40 rounded-lg my-8">
-				<img src="/assets/jersey-hero-img.jpg" className="absolute z-10 block inset-0 h-full w-full"/>
-				{<div className="bg-linear-to-r from-[#5e1b0a] to-transparent inset-0 absolute z-10"></div>}
-				<div className="relative z-20">
-					<h1 className="text-white mb-4 font-semibold text-3xl">JIGGY WACKO X REJICORE</h1>
-					<p className="w-100 text-gray-200">Tired of Seeing Strangers rock your look at every game? Stand Out. Be JIGGY</p>
+		{/* <div className="w-full px-10 flex gap-20 items-center border-b border-b-gray-500 py-1"> */}
+		
+		<section className="px-10 py-2 mt-15">
+			<div className="w-full rounded-lg overflow-hidden relative px-4 py-35 my-8">
+				<img src="/assets/jersey-page-hero-img.png" className="object-cover absolute z-10 block inset-0 h-auto w-full"/>
+				{<div className="bg-linear-to-r from-black to-transparent inset-0 absolute z-10"></div>}
+				<div className="relative z-20 text-white mb-4 font-semibold w-[32vw] text-center">
+					<div className="font-rock-salt tracking-wide text-6xl mb-6">Jiggy Wacko</div>
+					<div className="font-stanlinist text-4xl mb-2">X</div> 
+					<div className="font-black-ops text-7xl tracking-widest">REJICORE</div>
+					<p className="text-gray-300 mt-4 text-lg">Tired of Seeing Strangers rock your look at every game?<br/>Stand Out. Be JIGGY</p>
 					<button className="text-black bg-white p-2 font-semibold mt-4 rounded-sm">Explore Below</button>
 				</div>
 			</div>
-			<ul className="flex font-semibold gap-2 mb-6">
-				<li><button className="bg-neutral-200 px-2 py-1 rounded-sm font-semibold">Men</button></li>
-				<li><button className="bg-neutral-200 px-2 py-1 rounded-sm font-semibold">Women</button></li>
-				<li><button className="bg-neutral-200 px-2 py-1 rounded-sm font-semibold">Blue</button></li>
-				<li><button className="bg-neutral-200 px-2 py-1 rounded-sm font-semibold">Black</button></li>
-				<li><button className="bg-neutral-200 px-2 py-1 rounded-sm font-semibold">Red</button></li>
+			<ul className="flex gap-2 mb-6">
+				<li><button className="border-2 border-neutral-400 text-neutral-600 px-4 py-2 cursor-pointer rounded-sm">Men</button></li>
+				<li><button className="border-2 border-neutral-400 text-neutral-600 px-4 py-2 cursor-pointer rounded-sm ">Women</button></li>
+				<li><button className="border-2 border-black px-4 py-2 cursor-pointer rounded-sm font-semibold">Blue</button></li>
+				<li><button className="border-2 border-neutral-400 text-neutral-600 px-4 py-2 cursor-pointer rounded-sm">Black</button></li>
+				<li><button className="border-2 border-neutral-400 text-neutral-600 px-4 py-2 cursor-pointer rounded-sm">Red</button></li>
 			</ul>
-			<ul className="grid lg:grid-cols-5 sm:gird-cols-3 grid-cols-2 gap-4 mb-8">
-				{productsData.map((product, productIndex) => (
-					<li key={productIndex}>
-						<img className="rounded-lg h-60 w-full block" src={product.imgUrl}/>
-						<h3 className="font-semibold">{product.name}</h3>
-						<span className="text-neutral-500">₦{product.price.toLocaleString()}</span>
-					</li>
-				))}
+			<ul className="grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-x-2 gap-y-4  mb-8">
+				{productsData.map((product, productIndex) => <DisplayedProduct productIndex={productIndex} product={product}/>)}
 			</ul>
 		</section>
-		<section className="bg-neutral-800 py-8">
-			<div className="w-[80vw] mx-auto flex justify-between text-white items-start">
+		<section className="bg-black py-8">
+			<div className="px-10 flex justify-between text-white items-start">
 	      <div>
 	        <h2 className="text-lg font-bold mb-2">GENERAL</h2>
 	        <ul>
@@ -149,7 +230,7 @@ export default function Page() {
 	        </ul>
 	      </div>
 	    </div>
-	    {/*<FullProductView/>*/}
+	    {/* <FullProductView/> */}
     </section>
 	</>)
 }
