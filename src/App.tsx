@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronRight, ChevronLeft } from "lucide-react"
+import { ArrowUpRight, ChevronRight, ChevronLeft, ArrowRight } from "lucide-react"
 import { useState } from "react"
 
 function JerseySection() {
@@ -13,8 +13,12 @@ function JerseySection() {
 	}
 	
   return  (
-    <section className="w-[80vw] mx-auto">
+    <section className="md:w-[80vw] w-[90vw] mx-auto blur-none">
       <h2 className="text-lg font-semibold">Stylish Jerseys</h2>
+      <div className="flex items-center gap-2">
+        <span>Unique Jerseys for any occassion</span>
+        <a href="/jerseys" className="flex items-center font-semibold">Explore <ArrowRight size={20}/></a>
+      </div>
       <div className="flex md:flex-row flex-col items-start gap-2">
         <div className="md:w-[55vw] grow overflow-x-hidden">
           <div className="w-full md:h-[40vw] flex items-start relative">
@@ -63,7 +67,7 @@ function JoggersSection() {
 
 function ModelsSection() {
   return (
-    <section className="w-[80vw] mx-auto relative mt-10 pt-12">
+    <section className="sm:w-[80vw] w-[90vw] mx-auto relative mt-10 pt-12">
       <h3 className="font-stanlinist w-full text-center z-10 absolute top-6 text-gray-400 md:text-8xl sm:text-7xl max-sm:text-5xl">JIGGY WACKO</h3>
       <div className="relative z-20 flex justify-between items-start mt-20">
         <img className="xl:w-60 w-35 h-auto sm:block hidden" src="/assets/model-1.png"/>
@@ -83,31 +87,31 @@ function Catalog() {
     <section className="relative">
       <img className="w-full h-full object-cover absolute inset-0 z-10" src="/assets/clothes.jpg"/>
       <div className="bg-neutral-700/50 absolute inset-0 z-10"/>
-      <div className="w-[80vw] mx-auto relative z-20 py-8">
+      <div className="sm:w-[80vw] w-[90vw] mx-auto relative z-20 py-8">
         <h1 className="text-white text-center sm:text-5xl text-3xl font-bold mb-4">EXPLORE OUR FASHION CATALOG</h1>
-        <p className="text-gray-300 sm:text-lg text-center mb-6">
+        <p className="text-gray-100 sm:text-lg text-center mb-6">
           Browse through our fashion Catalog to find a wide range of stylish clothing options.<br/>
           From classic looks to the latest Trends, There's something for everyone.
         </p>
-        <button className="text-center rounded-3xl border border-white flex gap-2 items-center w-fit mx-auto text-white p-2 backdrop-blur-sm font-medium mb-8">
+        <button className="cursor-pointer text-center rounded-3xl border border-white flex gap-2 items-center w-fit mx-auto text-white p-2 backdrop-blur-sm font-medium mb-8">
           <span>SEE OUR INSTAGRAM</span> <ArrowUpRight size={20}/>
         </button>
-        <div className="bg-white flex sm:flex-nowrap flex-wrap sm:justify-between gap-4 text-neutral-500 bg-white rounded-lg px-8 pt-8 pb-20">
-          <div className="max-sm:w-[40%] shrink-0">
+        <div className="bg-white flex md:flex-nowrap flex-wrap md:justify-between gap-4 text-neutral-500 bg-white rounded-lg md:px-8 md:pt-8 px-4 pt-4 md:pb-20 pb-8">
+          <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
             <h2 className="md:text-lg font-bold mb-2 text-black">GENERAL</h2>
             <ul>
               <li><a href="">About Us</a></li>
               <li><a href="">Contact Us</a></li>
             </ul>
           </div>
-          <div className="max-sm:w-[40%] shrink-0">
+          <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
             <h2 className="md:text-lg font-bold mb-2 text-black">CUSTOMER SERVICE</h2>
             <ul>
               <li><a href="">Privacy Policy</a></li>
               <li><a href="">Terms of Service</a></li>
             </ul>
           </div>
-          <div className="max-sm:w-[40%] shrink-0">
+          <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
             <h2 className="md:text-lg font-bold mb-2 text-black">SOCIAL MEDIA</h2>
             <ul>
               <li><a href="">Instagram</a></li>
@@ -116,7 +120,7 @@ function Catalog() {
               <li><a href="">Snapchat</a></li>
             </ul>
           </div>
-          <div className="max-sm:w-[40%] shrink-0">
+          <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
             <h2 className="text-lg font-bold mb-2 text-black">PRODUCTS</h2>
             <ul>
               <li><a href="">Jerseys</a></li>
@@ -143,21 +147,21 @@ export default function LandingPage() {
   ]
 
   return (<>
-    <div>
-      <section className="bg-black h-screen relative mb-60 p-px">
-        <div className="flex xl:flex-row flex-col w-[80vw] h-full mx-auto items-center mt-30 gap-4">
+    <section className="relative mb-60">
+      <section className="bg-black xl:h-screen xl:pt-0 xl:pb-0 px-px pt-20 pb-40">
+        <div className="flex xl:flex-row flex-col sm:w-[80vw] w-[90vw] h-full mx-auto items-center gap-4">
           <div className="xl:w-[40%] xl:order-1 order-2 xl:text-left text-center sm:w-150">
-            <h1 className="text-white text-4xl mb-2 font-semibold">StreetWear Clothing Brand</h1>
-            <p className="text-neutral-300 text-lg">Bold, Edgy, rebellious, playful and urban. A mix of graffiti, 90s hip-hop and underground street culture.</p>
+            <h1 className="text-white lg:text-4xl text-2xl mb-2 font-semibold">StreetWear Clothing Brand</h1>
+            <p className="text-neutral-300 lg:text-lg">Bold, Edgy, rebellious, playful and urban. A mix of graffiti, 90s hip-hop and underground street culture.</p>
           </div>
-          <img src="/assets/hero.jpg" className="xl:w-[35%] w-[50%] xl:order-2 order-1"/>
+          <img src="/assets/hero.jpg" className="xl:w-[35%] sm:w-[50%] w-[70%] xl:order-2 order-1"/>
         </div>
       </section>
       <div className="absolute -bottom-50 w-full">
-        <h2 className="text-neutral-300 text-lg font-semibold w-[80vw] mx-auto mb-1">New Arrivals</h2>
+        <h2 className="text-neutral-300 text-lg font-semibold md:w-[80vw] w-[90vw] mx-auto mb-1">New Arrivals</h2>
         {/* <ul className="grid grid-cols-6 w-[80vw] mx-auto gap-4 overflow-x-auto"> */}
-        <ul className="flex items-start w-[80vw] mx-auto gap-4 overflow-x-auto h-fit">
-        {newArrivals.map(cloth => (
+        <ul className="flex items-start sm:w-[80vw] w-[90vw] mx-auto gap-4 overflow-x-auto h-fit">
+          {newArrivals.map(cloth => (
             <li className="bg-linear-to-b w-50 shrink-0 from-neutral-400 to-neutral-100 p-2 rounded-lg h-70 hover:shadow-gray-400 hover:shadow-sm cursor-pointer">
               <div className="overflow-hidden w-full rounded-lg">
                 <img src={cloth.imgUrl} className="block hover:scale-125 duration-300 w-full h-50 object-cover"/>
@@ -168,7 +172,7 @@ export default function LandingPage() {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
     <JerseySection/>
     <JoggersSection/>
     <ModelsSection/>
