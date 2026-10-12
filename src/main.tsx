@@ -10,6 +10,19 @@ import Root from "./Root.tsx"
 import ShirtsPage from "./Shirts.tsx"
 import JoggersPage from "./Joggers.tsx"
 
+/**
+ * 
+ * 
+
+
+
+
+rUgJX	8JTLC	wHwPm	Ln2Nn	VtL6t
+ETlNh	UHhSo	qsh11	8Izga	iMfXw
+IY7Ck	LsSYA	t6nQM	GQEyI	6qrbj
+		orvv4	MgJ9p
+
+ */
 
 
 const router = createBrowserRouter([

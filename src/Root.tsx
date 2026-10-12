@@ -17,7 +17,7 @@ function Header() {
                 <nav className={`top-0 right-0 x:py-0 py-4 absolute xl:static xl:flex gap-8 font-semibold xl:w-full w-[70vw] bg-black h-full`}>
                     <div className="flex justify-end items-start xl:hidden block">
                         <button className="block cursor-pointer p-2 hover:bg-neutral-800" onClick={() => setSmScreenMenuVisible(false)}>
-                            <X color="white" size={20} stroke-width="4"/>
+                            <X color="white" size={20} strokeWidth="4"/>
                         </button>
                     </div>
                     <a href="/" className="block xl:p-0 p-2 mb-2 hover:bg-neutral-800">HOME</a>

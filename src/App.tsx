@@ -1,6 +1,14 @@
 import { ArrowUpRight, ChevronRight, ChevronLeft, ArrowRight } from "lucide-react"
 import { useState } from "react"
 
+interface NewProductData {
+  id: string;
+  name: string;
+  imgUrl: string;
+  description: string;
+  price: number;
+}
+
 function JerseySection() {
   const [slidesMoved, setSlidesMoved] = useState(0);
 
@@ -56,7 +64,7 @@ function JoggersSection() {
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-2">JW Joggers</h2>
           <p className="md:min-w-100 md:w-[30vw] mb-2 md:px-0 px-6 ">
-            Step out in comfort and style. Joggers that would do this and that.Very long paragraph about how good the joggers are
+            The perfect balance of loungewear comfort and streetwear style. Designed for slow mornings, long travels, and cozy weekends.
           </p>
           <button className="bg-black text-white p-4">Explore Collection</button>
         </div>
@@ -136,14 +144,50 @@ function Catalog() {
   )
 }
 
-export default function LandingPage() {
-  const newArrivals = [
-    {name: `JW SLICK 💋 WEARS`, price: 20000, imgUrl: "/assets/vest-1.jpg"},
-    {name: `JW Smiley head Tees`, price: 20000, imgUrl: "/assets/smiley-tee.jpg"},
-    {name: `JW Don't Care tees`, price: 20000, imgUrl: "/assets/jw-dc-tees.jpg"},
-    {name: `JW BLAC SLIM Joggers`, price: 20000, imgUrl: "/assets/black-joggers.jpg"},
-    {name: `JW x RJ BLAC JERSEY`, price: 20000, imgUrl: "/assets/jersey-8.jpg"},
-    {name: `JW REAL SHI TEES`, price: 20000, imgUrl: "/assets/real-shi-tee.jpg"}
+export default function LandingPage() {			
+  const newArrivals: NewProductData[] = [
+    {
+      id: "t6MFV", 
+      description: "This is the peak of clothing right here. Trending casual wear that gets everyone looking", 
+      name: `JW SLICK 💋 WEARS`,
+      price: 20000,
+      imgUrl: "/assets/vest-1.jpg"
+    },
+    {
+      id: "iWoR3",
+      description: "This is the peak of clothing right here. Trending casual wear that gets everyone looking",
+      name: `JW Smiley head Tees`,
+      price: 20000, 
+      imgUrl: "/assets/smiley-tee.jpg"
+    },
+    {
+      id: "IoNcz",
+      description: "This is the peak of clothing right here. Trending casual wear that gets everyone looking",
+      name: `JW Don't Care tees`,
+      price: 20000,
+      imgUrl: "/assets/jw-dc-tees.jpg"
+    },
+    {
+      id: "FpAtK",
+      description: "This is the peak of clothing right here. Trending casual wear that gets everyone looking",
+      name: `JW BLAC SLIM Joggers`, 
+      price: 20000, 
+      imgUrl: "/assets/black-joggers.jpg"
+    },
+    {
+      id: "WupMq", 
+      description: "This is the peak of clothing right here. Trending casual wear that gets everyone looking", 
+      name: `JW x RJ BLAC JERSEY`, 
+      price: 20000, 
+      imgUrl: "/assets/jersey-8.jpg"
+    },
+    {
+      id: "ByBJW", 
+      description: "This is the peak of clothing right here. Trending casual wear that gets everyone looking", 
+      name: `JW REAL SHI TEES`, 
+      price: 20000,
+      imgUrl: "/assets/real-shi-tee.jpg"
+    }
   ]
 
   return (<>
@@ -157,17 +201,17 @@ export default function LandingPage() {
           <img src="/assets/hero.jpg" className="xl:w-[35%] sm:w-[50%] w-[70%] xl:order-2 order-1"/>
         </div>
       </section>
-      <div className="absolute -bottom-50 w-full">
+      <div className="absolute sm:-bottom-50 -bottom-40 w-full">
         <h2 className="text-neutral-300 text-lg font-semibold md:w-[80vw] w-[90vw] mx-auto mb-1">New Arrivals</h2>
         {/* <ul className="grid grid-cols-6 w-[80vw] mx-auto gap-4 overflow-x-auto"> */}
-        <ul className="flex items-start sm:w-[80vw] w-[90vw] mx-auto gap-4 overflow-x-auto h-fit">
+        <ul className="flex items-start sm:w-[80vw] w-[90vw] mx-auto sm:gap-4 gap-2 overflow-x-auto h-fit">
           {newArrivals.map(cloth => (
-            <li className="bg-linear-to-b w-50 shrink-0 from-neutral-400 to-neutral-100 p-2 rounded-lg h-70 hover:shadow-gray-400 hover:shadow-sm cursor-pointer">
+            <li key={cloth.id} className="bg-linear-to-b shrink-0 from-neutral-400 to-neutral-100 p-2 rounded-lg sm:h-70 h-60 hover:shadow-gray-400 hover:shadow-sm cursor-pointer">
               <div className="overflow-hidden w-full rounded-lg">
-                <img src={cloth.imgUrl} className="block hover:scale-125 duration-300 w-full h-50 object-cover"/>
+                <img src={cloth.imgUrl} className="block hover:scale-125 duration-300 w-full sm:h-50 h-40 object-cover"/>
               </div>
-              <h3 className="uppercase font-caveat font-bold mt-2">{cloth.name}</h3>
-              <p className="text-gray-500 font-medium">₦{(typeof cloth) === "string" ? cloth.price : cloth.price.toLocaleString()}</p>
+              <h3 className="uppercase font-rock-salt text-gray-700 mt-2">{cloth.name}</h3>
+              <p className="text-gray-500 font-medium">₦{cloth.price.toLocaleString()}</p>
             </li>
           ))}
         </ul>
