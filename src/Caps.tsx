@@ -31,7 +31,7 @@ export default function Page() {
 	]
 
 	return (<>
-		<section className="px-10 py-2 mt-22 sm:ml-10">
+		<section className="sm:px-10 px-5 py-2 mt-22 sm:ml-10">
 			<h1 className="font-bold text-3xl">CAPS</h1>			
 			<ul className="grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-x-2 gap-y-4 mt-10 mb-8">
 				{productsData.map((product) => (
