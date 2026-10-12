@@ -25,26 +25,30 @@ export default function ProductCard({ product, selectProduct, listStyling } : {p
                         </li>
                     ))}
                 </ul>
-                <div className="w-full absolute bottom-1 flex justify-center gap-1">
-                    {product.imgUrls.map((_url, i) => (
-                        <button key={i} 
-                            className={`${Math.abs(slidesMoved) === i ? "bg-black border-white" : "bg-white border-black"} border-[1px] h-[8px] w-[8px] rounded-full`}>
-                        </button>
-                    ))}
-                </div>
+                {product.imgUrls.length > 1 && (
+                    <div className="w-full absolute bottom-1 flex justify-center gap-1">
+                        {product.imgUrls.map((_url, i) => (
+                            <button key={i} 
+                                className={`${Math.abs(slidesMoved) === i ? "bg-black border-white" : "bg-white border-black"} border-[1px] h-[8px] w-[8px] rounded-full`}>
+                            </button>
+                        ))}
+                    </div>
+                )}
             </div>
             <h3 className="font-semibold mt-1 sm:text-base text-sm">{product.name}</h3>
             <span className="text-neutral-800 sm:text-base text-sm">₦{product.price.toLocaleString()}</span>
-            <button onClick={moveSlidesRight} disabled={slidesMoved == 0} 
-                className="absolute sm:top-[45%] top-[40%] sm:left-2 left-0 p-1 cursor-pointer"
-            >
-                <ChevronLeft className="text-black" size={18}/>
-            </button>
-            <button onClick={moveSlidesLeft} disabled={slidesMoved == product.imgUrls.length} 
-                className="absolute sm:top-[45%] top-[40%] sm:right-2 p-1 right-0 cursor-pointer"
-            >
-                <ChevronRight className="text-black" size={18}/>
-            </button>
+            {product.imgUrls.length > 1 && (<>
+                <button onClick={moveSlidesRight} disabled={slidesMoved == 0} 
+                    className="absolute sm:top-[45%] top-[40%] sm:left-2 left-0 p-1 cursor-pointer"
+                >
+                    <ChevronLeft className="text-neutral-600" size={18}/>
+                </button>
+                <button onClick={moveSlidesLeft} disabled={slidesMoved == product.imgUrls.length} 
+                    className="absolute sm:top-[45%] top-[40%] sm:right-2 p-1 right-0 cursor-pointer"
+                >
+                    <ChevronRight className="text-neutral-600" size={18}/>
+                </button>
+            </>)}
         </li>
     )
 }

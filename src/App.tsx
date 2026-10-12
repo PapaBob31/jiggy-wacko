@@ -210,7 +210,7 @@ export default function LandingPage() {
               <div className="overflow-hidden w-full rounded-lg">
                 <img src={cloth.imgUrl} className="block hover:scale-125 duration-300 w-full sm:h-50 h-40 object-cover"/>
               </div>
-              <h3 className="uppercase font-rock-salt text-gray-700 mt-2">{cloth.name}</h3>
+              <h3 className="uppercase text-gray-700 mt-2">{cloth.name}</h3>
               <p className="text-gray-500 font-medium">₦{cloth.price.toLocaleString()}</p>
             </li>
           ))}
