@@ -9,20 +9,10 @@ import CapPage from "./Caps.tsx"
 import Root from "./Root.tsx"
 import ShirtsPage from "./Shirts.tsx"
 import JoggersPage from "./Joggers.tsx"
-
-/**
- * 
- * 
+import PageNotFound from "./404.tsx"
+import JeansPage from "./Jeans.tsx"
 
 
-
-
-rUgJX	8JTLC	wHwPm	Ln2Nn	VtL6t
-ETlNh	UHhSo	qsh11	8Izga	iMfXw
-IY7Ck	LsSYA	t6nQM	GQEyI	6qrbj
-		orvv4	MgJ9p
-
- */
 
 
 const router = createBrowserRouter([
@@ -35,6 +25,8 @@ const router = createBrowserRouter([
       {path: "/caps", Component: CapPage},
       {path: "/shirts", Component: ShirtsPage},
       {path: "/joggers", Component: JoggersPage},
+      {path: "/jeans", Component: JeansPage},
+      {path: "*", Component: PageNotFound}
     ]
   }
 ])
