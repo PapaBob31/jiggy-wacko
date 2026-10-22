@@ -9,6 +9,7 @@ interface NewProductData {
   price: number;
 }
 
+
 function JerseySection() {
   const [slidesMoved, setSlidesMoved] = useState(0);
 
@@ -30,15 +31,15 @@ function JerseySection() {
       <div className="flex md:flex-row flex-col items-start gap-2">
         <div className="md:w-[55vw] grow overflow-x-hidden">
           <div className="w-full md:h-[40vw] flex items-start relative">
-            <img className={`w-full h-full object-cover shrink-0 bg-neutral-300 ${slidesMoved < 0 ? "-" : ""}translate-x-[${100 * Math.abs(slidesMoved)}`} 
+            <img className={`w-full h-full duration-500 ease-in-out object-cover shrink-0 bg-neutral-300 ${slidesMoved < 0 ? "-" : ""}translate-x-[${100 * Math.abs(slidesMoved)}%]`} 
               src="/assets/home-red-jersey-front.png"/>
-            <img className={`w-full h-full object-cover shrink-0 bg-neutral-300 ${slidesMoved < 0 ? "-" : ""}translate-x-[${100 * Math.abs(slidesMoved)}`}
+            <img className={`w-full h-full duration-500 ease-in-out object-cover shrink-0 bg-neutral-300 ${slidesMoved < 0 ? "-" : ""}translate-x-[${100 * Math.abs(slidesMoved)}%]`}
               src="/assets/home-red-jersey-back.png"/>
-            <button onClick={moveSlidesRight} disabled={slidesMoved == 0} className="absolute top-[45%] left-2 p-1 cursor-pointer">
-              <ChevronLeft className="text-black" size={18}/>
+            <button onClick={moveSlidesRight} disabled={slidesMoved == 0} className="disabled:text-neutral-500 absolute top-[45%] left-2 p-1 cursor-pointer">
+              <ChevronLeft size={18}/>
             </button>
-            <button onClick={moveSlidesLeft} disabled={slidesMoved == -1} className="absolute top-[45%] right-2 p-1 cursor-pointer">
-              <ChevronRight className="text-black" size={18}/>
+            <button onClick={moveSlidesLeft} disabled={slidesMoved == -1} className="disabled:text-neutral-500 absolute top-[45%] right-2 p-1 cursor-pointer">
+              <ChevronRight size={18}/>
             </button>
           </div>
         </div>
@@ -66,7 +67,7 @@ function JoggersSection() {
           <p className="md:min-w-100 md:w-[30vw] mb-2 md:px-0 px-6 ">
             The perfect balance of loungewear comfort and streetwear style. Designed for slow mornings, long travels, and cozy weekends.
           </p>
-          <button className="bg-black text-white p-4">Explore Collection</button>
+          <a className="bg-black text-white p-4 block w-fit mx-auto" href="/joggers">Explore Collection</a>
         </div>
       </div>
     </section>
@@ -101,9 +102,10 @@ function Catalog() {
           Browse through our fashion Catalog to find a wide range of stylish clothing options.<br/>
           From classic looks to the latest Trends, There's something for everyone.
         </p>
-        <button className="cursor-pointer text-center rounded-3xl border border-white flex gap-2 items-center w-fit mx-auto text-white p-2 backdrop-blur-sm font-medium mb-8">
+        <a href="https://www.instagram.com/jiggywack" target="_blank" rel="noopener noreferrer"
+          className="cursor-pointer text-center rounded-3xl border border-white flex gap-2 items-center w-fit mx-auto text-white p-2 backdrop-blur-sm font-medium mb-8">
           <span>SEE OUR INSTAGRAM</span> <ArrowUpRight size={20}/>
-        </button>
+        </a>
         <div className="bg-white flex md:flex-nowrap flex-wrap md:justify-between gap-4 text-neutral-500 bg-white rounded-lg md:px-8 md:pt-8 px-4 pt-4 md:pb-20 pb-8">
           <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
             <h2 className="md:text-lg font-bold mb-2 text-black">GENERAL</h2>
