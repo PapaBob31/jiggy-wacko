@@ -37,7 +37,7 @@ export default function Page() {
 		{/* <div className="w-full px-10 flex gap-20 items-center border-b border-b-gray-500 py-1"> */}
 		<h1 className="font-bold text-3xl mt-22 sm:ml-10 ml-5">JOGGERS</h1>
 		<section className="sm:px-10 px-5 py-2 mt-10">
-			<ul className="flex flex-nowrap gap-2 mb-6">
+			<ul className="flex flex-wrap gap-2 mb-6">
 				{availableFilters.map((filterAvailable, index) => (
 					<li key={index}><FilterButton value={filterAvailable} currentPageFilter={filter} setFilter={setFilter}/></li>
 				))}
@@ -48,7 +48,7 @@ export default function Page() {
 						product={product} 
 						selectProduct={setSelectedProduct} 
 						key={product.id} 
-						listStyling="flex flex-nowrap overflow-x-hidden w-full h-100"
+						listStyling="flex flex-nowrap overflow-x-hidden w-full min-h-60 h-[20vw]"
 					/>
 				))}
 			</ul>
