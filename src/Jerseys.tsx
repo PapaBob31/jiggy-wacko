@@ -107,7 +107,7 @@ export default function Page() {
 
 	return (<>
 		<section className="py-2">
-			<div className="sm:mt-14 mt-10 bg-black w-full overflow-hidden relative lg:h-[85vh] sm:h-[60vh] h-[50vh] max-h-120 max-sm:max-h-100 sm:mb-8 mb-4">
+			<div className="sm:mt-14 mt-10 bg-black w-full overflow-hidden relative lg:h-[85vh] sm:h-[60vh] h-[50vh] max-sm:max-h-100 sm:mb-8 mb-4">
 				<img src="/assets/jersey-page-hero-img.png" className="object-cover lg:object-top object-top-right absolute z-10 block inset-0 w-full h-full"/>
 				{<div className="bg-linear-to-r sm:from-black from-black/50 from-10% lg:to-60% to-50% to-transparent inset-0 absolute z-10"></div>}
 				<div className="sm:px-10 px-5 absolute sm:bottom-20 bottom-0 z-20 text-white mb-4 xl:w-[40vw] sm:w-[60vw] w-[80vw]">
