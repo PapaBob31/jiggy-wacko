@@ -106,26 +106,27 @@ export default function Page() {
 	const [productsToDisplay, filter, setFilter] = useProductFilters(productsData) as [ProductData[], FILTER, (arg: FILTER)=>void]
 
 	return (<>
-		{/* <div className="w-full px-10 flex gap-20 items-center border-b border-b-gray-500 py-1"> */}
-		
-		<section className="sm:px-10 px-5 py-2 mt-15">
-			<div className="w-full rounded-lg overflow-hidden relative px-4 xl:py-35 lg:py-20 sm:pt-20 pt-15 pb-5 sm:my-8 my-4">
-				<img src="/assets/jersey-page-hero-img.png" className="object-cover absolute z-10 block inset-0 w-full h-full"/>
-				{<div className="bg-linear-to-r from-black to-transparent inset-0 absolute z-10"></div>}
-				<div className="relative z-20 text-white mb-4 xl:w-[32vw] sm:w-[50vw] w-[80vw]">
-					<div className="font-rock-salt tracking-wide xl:text-6xl sm:text-4xl text-2xl xl:mb-6 sm:mb-3 mb-0 font-semibold ">Jiggy Wacko</div>
-					<div className="font-stanlinist xl:text-4xl sm:text-xl text-lg xl:mb-2 mb-0 text-center xl:w-[70%] w-[50%] font-semibold">X</div> 
-					<div className="font-black-ops xl:text-7xl sm:text-5xl text-2xl tracking-widest font-semibold">REJICORE</div>
-					<p className="text-neutral-300 xl:mt-4 mt-1">Tired of Seeing Strangers rock your look at every game? Stand Out. Be JIGGY</p>
-					{/* <button className="text-black bg-white p-2 font-semibold xl:mt-4 mt-1 rounded-sm">Explore Below</button> */}
+		<section className="py-2">
+			<div className="sm:mt-14 mt-10 bg-black w-full overflow-hidden relative lg:h-[85vh] sm:h-[60vh] h-[50vh] max-h-120 max-sm:max-h-100 sm:mb-8 mb-4">
+				<img src="/assets/jersey-page-hero-img.png" className="object-cover lg:object-top object-top-right absolute z-10 block inset-0 w-full h-full"/>
+				{<div className="bg-linear-to-r sm:from-black from-black/50 from-10% lg:to-60% to-50% to-transparent inset-0 absolute z-10"></div>}
+				<div className="sm:px-10 px-5 absolute sm:bottom-20 bottom-0 z-20 text-white mb-4 xl:w-[40vw] sm:w-[60vw] w-[80vw]">
+					<div className="font-black-ops xl:text-3xl lg:text-2xl sm:text-lg text-base font-semibold sm:mb-4 mb-2">INTRODUCING</div>
+					<div className="font-black-ops tracking-wide xl:text-3xl lg:text-2xl sm:text-lg text-base font-semibold text-neutral-200 leading-none"><i>Jiggy Wacko</i> X REJICORE</div>
+					<div className="font-black-ops xl:text-7xl text-5xl tracking-widest font-semibold leading-none">JERSEYS</div>
+					<p className="text-neutral-300 xl:mt-3 sm:mt-2 mt-1 sm:text-base text-sm">
+						Tired of Seeing Strangers rock your look at every game?
+						<span className="lg:inline hidden">It is time to upgrade your wardrobe with pieces that actually turn heads, spark conversations, and scream individuality.</span> Stand Out. Be JIGGY
+					</p>
+					<button className="text-black bg-white p-2 font-semibold xl:mt-4 mt-2 rounded-sm sm:text-base text-sm">Explore Below</button>
 				</div>
 			</div>
-			<ul className="flex gap-2 mb-6 flex-wrap">
+			<ul className="sm:px-10 px-5 flex gap-2 mb-6 flex-wrap">
 				{availableFilters.map((filterAvailable, index) => (
 					<li key={index}><FilterButton value={filterAvailable} currentPageFilter={filter} setFilter={setFilter}/></li>
 				))}
 			</ul>
-			<ul className="grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-x-4 sm:gap-y-5 gap-x-2 gap-y-4 mb-8">
+			<ul className="sm:px-10 px-5 grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-x-4 sm:gap-y-5 gap-x-2 gap-y-4 mb-8">
 				{productsToDisplay.map((product) => (
 					<ProductCard 
 						product={product} 
