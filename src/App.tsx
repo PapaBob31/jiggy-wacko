@@ -206,15 +206,20 @@ function ModelsSection() {
       initial={{opacity: 0.4, translateY: "10%"}}
       whileInView={{opacity: 1, translateY: "0", transition: {duration: 0.3, ease: "easeInOut"}}}
       viewport={{once: true}}
-      className="sm:w-[80vw] w-[90vw] mx-auto relative mt-10 pt-12"
+      className="sm:w-[80vw] w-[90vw] mx-auto relative sm:my-10 pt-12 my-5"
     >
-      <h3 className="font-stanlinist w-full text-center z-10 absolute top-6 text-gray-400 md:text-8xl sm:text-7xl max-sm:text-5xl">JIGGY WACKO</h3>
-      <div className="relative z-20 flex justify-between items-start mt-20">
-        <img className="xl:w-60 w-35 h-auto sm:block hidden" src="/assets/model-1.png"/>
-        <img className="xl:w-60 w-35 h-auto md:block hidden" src="/assets/model-8.png"/>
+      {/* <div></div> */}
+      {/* <h3 className="font-stanlinist w-full text-center z-10 absolute top-6 text-gray-400 md:text-8xl sm:text-7xl max-sm:text-5xl">JIGGY WACKO</h3> */}
+      <h3 className="font-bold w-full text-center md:text-6xl sm:text-5xl max-sm:text-2xl">SHOW OFF YOUR PERSONAL STYLE</h3>
+      <p className="text-center text-gray-600 lg:w-[50vw] zm:w-[70vw] w-[90vw] mx-auto sm:mt-4 mt-2">
+        We've got a wide range of unique designs such that anybody can find something that fits their aesthetic. So Whatever your style might be, We've got you!
+      </p>
+      <div className="relative z-20 flex justify-between items-end sm:mt-10 mt-5">
+        <img className="xl:w-60 w-35 h-auto" src="/assets/model-5.png"/>
+        <img className="xl:w-60 w-35 h-auto md:block hidden" src="/assets/model-2.png"/>
         <img className="xl:w-60 w-35 h-auto" src="/assets/model-4.png"/>
-        <img className="xl:w-60 w-35 h-auto md:block hidden" src="/assets/model-8.png"/>
-        <img className="xl:w-60 w-35 h-auto" src="/assets/model-6.png"/>
+        <img className="xl:w-60 w-35 h-auto sm:block hidden" src="/assets/model-1.png"/>
+        <img className="xl:w-60 w-35 h-auto md:block hidden" src="/assets/model-6.png"/>
       </div>
     </motion.section>
   )
