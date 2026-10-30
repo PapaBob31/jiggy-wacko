@@ -1,9 +1,28 @@
 import { X } from "lucide-react";
 import { useState } from "react"
 import { type ProductData } from "../types"
+import { Info } from "lucide-react"
 
 export default function FullProductView({data, closeView} : {data: ProductData; closeView: ()=>void}) {
     const [mainDisplayUrl, setMainDisplayUrl] = useState(data.imgUrls[0])
+    const [selectedSize, setSelectedSize] = useState<String>("")
+    const [sizeError, setSizeError] = useState<Boolean>(false)
+
+    function messageVendorOnWhatsapp() {
+        if (data.sizes && !selectedSize) {
+            setSizeError(true)
+            return;
+        }
+
+        const message = `Hello Jiggy, I would like to purchase a ${data.name}\n\nSize: ${selectedSize}\n\nQuantity: 1\n\nPrice: ₦${data.price.toLocaleString()}`;
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/${import.meta.env.VITE_VENDOR_PHONE_NUMBER}?text=${encodedMessage}`, '_blank');
+    };
+
+    function chooseProductSize(size: string) {
+        setSizeError(false)
+        setSelectedSize(selectedSize === size ? "" : size)
+    }
 
     return (
         <section className="fixed bg-black/50 inset-0 w-full z-50">
@@ -35,10 +54,21 @@ export default function FullProductView({data, closeView} : {data: ProductData; 
                     {data.sizes && (<>
                         <h3 className="font-semibold mb-2">Select Size</h3>
                         <ul className="flex justify-start gap-2 mb-4">
-                            {data.sizes.map(size => <li><button className="p-1 min-w-8 rounded-sm cursor-pointer border border-gray-400 shrink-0 text-gray-700">{size}</button></li>)}
+                            {data.sizes.map(size => (
+                                <li>
+                                    <button 
+                                        onClick={() => chooseProductSize(size)}
+                                        className={`p-1 min-w-8 rounded-sm cursor-pointer border 
+                                        ${ size === selectedSize ? "border-black font-semibold text-black" : "border-gray-400 text-gray-700"} shrink-0`}
+                                    >
+                                        {size}
+                                    </button>
+                                </li>
+                            ))}
                         </ul>
                     </>)}
-                    <button className="bg-black text-white rounded-3xl block w-full p-2">Buy</button>
+                    {sizeError && <div className="text-red-600 mb-2 flex items-center gap-2"><Info size={18}/><span>You have to select a size first</span></div>}
+                    <button className="bg-black text-white rounded-3xl block w-full p-2" onClick={messageVendorOnWhatsapp}>Buy</button>
                 </div>
             </div>
         </section>
