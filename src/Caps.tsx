@@ -17,7 +17,7 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "One-size-fits-all adjustable plastic snapback closure ensures a snug, custom fit for practically anyone",
-			price: 20000
+			price: 7000
 		}, 
 		{
 			id: "cN32q",
@@ -26,7 +26,7 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "One-size-fits-all adjustable plastic snapback closure ensures a snug, custom fit for practically anyone",
-			price: 20000
+			price: 7000
 		}
 	]
 

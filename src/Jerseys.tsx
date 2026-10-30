@@ -18,7 +18,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}, 
 		{
 			id: "o3gcN",
@@ -27,7 +28,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}, 
 		{
 			id: "l0rL7",
@@ -36,7 +38,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}, 
 		{
 			id: "Dsj1l",
@@ -45,7 +48,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "3ZO5m",
@@ -54,7 +58,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "gJzXX",
@@ -63,7 +68,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "LNgzt",
@@ -72,7 +78,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "Qzpz6",
@@ -81,7 +88,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "iE9mw",
@@ -90,7 +98,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "gNkVv",
@@ -99,7 +108,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
-			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash"
+			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}
 	]
 

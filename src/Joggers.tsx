@@ -19,7 +19,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "GREY",
 			price: 20000,
-			description: "Comfortable cotton fabric joggers for everyone and any occassion"
+			description: "Comfortable cotton fabric joggers for everyone and any occassion",
+			sizes: ["32", "34", "36", "38", "40"]
 		}, 
 		{
 			id: "8T47S",
@@ -28,7 +29,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
-			description: "Comfortable cotton fabric joggers for everyone and any occassion"
+			description: "Comfortable cotton fabric joggers for everyone and any occassion",
+			sizes: ["32", "34", "36", "38", "40"]
 		}, 
 	]
 	const [productsToDisplay, filter, setFilter] = useProductFilters(productsData) as [ProductData[], FILTER, (arg: FILTER)=>void]

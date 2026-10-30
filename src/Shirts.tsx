@@ -19,7 +19,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "WHITE",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}, 
 		{
 			id: "lppdp",
@@ -28,7 +29,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "WHITE",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}, 
 		{
 			id: "NwHFs",
@@ -37,7 +39,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}, 
 		{
 			id: "Wscgq",
@@ -46,7 +49,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "brrP3",
@@ -55,7 +59,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "HS4pY",
@@ -64,7 +69,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "WHITE",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "8d6UZ",
@@ -73,7 +79,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "MkIvN",
@@ -82,7 +89,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "WHITE",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}, 
 		{
 			id: "5BpOK",
@@ -91,7 +99,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "WHITE",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "vPA8U",
@@ -100,7 +109,8 @@ export default function Page() {
 			for: ["MEN", "WOMEN"],
 			color: "PINK",
 			description: "Designed with a relaxed yet structured fit that flatters without feeling restrictive.",
-			price: 15000
+			price: 15000,
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "ByBJW", 
@@ -110,6 +120,7 @@ export default function Page() {
 			color: "BLACK",
 			price: 15000,
 			imgUrls: ["/assets/real-shi-tee.png"],
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "K1pog",
@@ -119,6 +130,7 @@ export default function Page() {
 			color: "BLACK",
 			price: 15000,
 			imgUrls: ["/assets/smiley-tee.png"],
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		},
 		{
 			id: "BLanJ", 
@@ -128,6 +140,7 @@ export default function Page() {
 			color: "BLACK",
 			price: 15000,
 			imgUrls: ["/assets/wacko-cat.png", "/assets/white-shirt-back.png"],
+			sizes: ["S", "M", "L", "XL", "2XL"]
 		}
 	]
 
