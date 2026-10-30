@@ -6,6 +6,7 @@ export interface ProductData {
     color: string,
     description: string;
     price: number;
+    sizes?: string[]
 }
 
 
