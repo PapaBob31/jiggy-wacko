@@ -1,6 +1,6 @@
 import { ArrowUpRight, ChevronRight, ChevronLeft, ArrowRight } from "lucide-react"
 import { useState } from "react"
-import { motion, stagger }  from "motion/react"
+import { motion, stagger, type Variants }  from "motion/react"
 
 interface NewProductData {
   id: string;
@@ -11,7 +11,7 @@ interface NewProductData {
 }
 
 
-const jerseysSectionTextAnimations = {
+const jerseysSectionTextAnimations: Variants = {
   hidden: {
     translateY: "40%",
     opacity: 0,
@@ -26,7 +26,7 @@ const jerseysSectionTextAnimations = {
   }
 }
 
-const jerseysSectionImgBoxVariants = {
+const jerseysSectionImgBoxVariants: Variants = {
   outsideparent: {
     translateY: "50%",
     opacity: 0,
@@ -41,7 +41,7 @@ const jerseysSectionImgBoxVariants = {
   }
 }
 
-const jerseysSectionImgsVariants = {
+const jerseysSectionImgsVariants: Variants = {
   outsideparent: {
     scale: 1.3,
     originX: "0%",
@@ -73,16 +73,18 @@ function JerseySection() {
   return  (
     <section className="md:w-[80vw] w-[90vw] mx-auto blur-none">
       <motion.h2
-        initial={jerseysSectionTextAnimations.hidden}
-        whileInView={jerseysSectionTextAnimations.visible}
+        initial={"hidden"}
+        whileInView={"visible"}
+        variants={jerseysSectionTextAnimations}
         viewport={{once: true}}
         className="text-lg font-semibold"
       >
         Stylish Jerseys
       </motion.h2>
       <motion.div 
-        initial={jerseysSectionTextAnimations.hidden}
-        whileInView={jerseysSectionTextAnimations.visible}
+        initial={"hidden"}
+        whileInView={"visible"}
+        variants={jerseysSectionTextAnimations}
         viewport={{once: true}}
         className="flex items-center gap-2"
       >
@@ -147,7 +149,7 @@ function JerseySection() {
 
 
 
-const joggersSectionVariants = {
+const joggersSectionVariants: Variants = {
   hidden: {
     clipPath: "inset(0 0 100% 0)"
   },
@@ -160,7 +162,7 @@ const joggersSectionVariants = {
   }
 }
 
-const joggersSectionContentVariants = {
+const joggersSectionContentVariants: Variants = {
   hidden: {
     scale: 1.3,
     originX: "0%",
@@ -176,6 +178,8 @@ const joggersSectionContentVariants = {
     originY: "0%"
   }
 }
+
+
 
 function JoggersSection() {
   return (
@@ -205,7 +209,7 @@ function ModelsSection() {
     <motion.section 
       initial={{opacity: 0.4, translateY: "10%"}}
       whileInView={{opacity: 1, translateY: "0", transition: {duration: 0.3, ease: "easeInOut"}}}
-      viewport={{once: true}}
+      viewport={{once: true, amount: 0.4}}
       className="sm:w-[80vw] w-[90vw] mx-auto relative sm:my-10 pt-12 my-5"
     >
       {/* <div></div> */}
@@ -225,7 +229,7 @@ function ModelsSection() {
   )
 }
 
-const footerSectionAnimation = {
+const footerSectionAnimation: Variants = {
   hidden: {
     opacity: 0,
   },
@@ -238,7 +242,7 @@ const footerSectionAnimation = {
   }
 }
 
-const footerTextAnimations = {
+const footerTextAnimations: Variants = {
   hidden: {
     opacity: 0,
     translateY: "40%",
@@ -254,7 +258,7 @@ const footerTextAnimations = {
   }
 }
 
-const instagramLinkAnimation = {
+const instagramLinkAnimation: Variants = {
   hidden: {
     scale: 0.5
   },
@@ -269,21 +273,23 @@ const instagramLinkAnimation = {
 
 function Catalog() {
   return (
-    <motion.footer className="relative" initial={footerSectionAnimation.hidden} whileInView={footerSectionAnimation.visible} viewport={{once: true}}>
+    <motion.footer className="relative" initial="hidden" whileInView="visible" variants={footerSectionAnimation} viewport={{once: true}}>
       <img className="w-full h-full object-cover absolute inset-0 z-10" src="/assets/clothes.jpg"/>
       <div className="bg-neutral-700/50 absolute inset-0 z-10"/>
       <div className="sm:w-[80vw] w-[90vw] mx-auto relative z-20 py-8">
         <motion.h1
-          initial={footerTextAnimations.hidden}
-          whileInView={footerTextAnimations.visible}
+          initial="hidden"
+          whileInView="visible"
+          variants={footerTextAnimations}
           viewport={{once: true}}
           className="text-white text-center sm:text-5xl text-3xl font-bold mb-4"
         >
           EXPLORE OUR FASHION CATALOG
         </motion.h1>
         <motion.p 
-          initial={footerTextAnimations.hidden}
-          whileInView={footerTextAnimations.visible}
+          initial="hidden"
+          whileInView="visible"
+          variants={footerTextAnimations}
           viewport={{once: true}}
           className="text-gray-100 sm:text-lg text-center mb-6"
         >
@@ -291,8 +297,9 @@ function Catalog() {
           From classic looks to the latest Trends, There's something for everyone.
         </motion.p>
         <motion.a
-          initial={instagramLinkAnimation.hidden}
-          whileInView={instagramLinkAnimation.visible}
+          initial="hidden"
+          whileInView="visible"
+          variants={instagramLinkAnimation}
           viewport={{once: true}}
           href="https://www.instagram.com/jiggywack"
           target="_blank"
@@ -304,8 +311,9 @@ function Catalog() {
         <div className="bg-white flex md:flex-nowrap flex-wrap md:justify-between gap-4 text-neutral-500 bg-white rounded-lg md:px-8 md:pt-8 px-4 pt-4 md:pb-20 pb-8">
           <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
             <motion.h2
-              initial={footerTextAnimations.hidden}
-              whileInView={footerTextAnimations.visible}
+              initial="hidden"
+              whileInView="visible"
+              variants={footerTextAnimations}
               viewport={{once: true}}
               className="md:text-lg font-bold mb-2 text-black"
             >
@@ -313,14 +321,16 @@ function Catalog() {
             </motion.h2>
             <ul>
               <motion.li 
-                initial={footerTextAnimations.hidden}
-                whileInView={footerTextAnimations.visible}
+                initial="hidden"
+                whileInView="visible"
+                variants={footerTextAnimations}
                 viewport={{once: true}}
               >
                 <a href="">About Us</a></motion.li>
               <motion.li 
-                initial={footerTextAnimations.hidden}
-                whileInView={footerTextAnimations.visible}
+                initial="hidden"
+                whileInView="visible"
+                variants={footerTextAnimations}
                 viewport={{once: true}}
               >
                 <a href="">Contact Us</a>
@@ -329,43 +339,44 @@ function Catalog() {
           </div>
           <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
             <motion.h2 
-              initial={footerTextAnimations.hidden}
-              whileInView={footerTextAnimations.visible} 
+              initial="hidden"
+              whileInView="visible"
+              variants={footerTextAnimations}
               viewport={{once: true}}
               className="md:text-lg font-bold mb-2 text-black"
             >
               CUSTOMER SERVICE
             </motion.h2>
             <ul>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}>
                 <a href="">Privacy Policy</a>
               </motion.li>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}>
                 <a href="">Terms of Service</a>
               </motion.li>
             </ul>
           </div>
           <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
-            <motion.h2 initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}} 
+            <motion.h2 initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}} 
               className="md:text-lg font-bold mb-2 text-black"
             >
               SOCIAL MEDIA
             </motion.h2>
             <ul>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">Instagram</a></motion.li>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">X</a></motion.li>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">Tiktok</a></motion.li>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">Snapchat</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">Instagram</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">X</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">Tiktok</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">Snapchat</a></motion.li>
             </ul>
           </div>
           <div className="max-md:w-[40%] max-sm:w-[45%] shrink-0">
-            <motion.h2 initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} className="text-lg font-bold mb-2 text-black">PRODUCTS</motion.h2>
+            <motion.h2 initial="hidden" whileInView="visible" variants={footerTextAnimations} className="text-lg font-bold mb-2 text-black">PRODUCTS</motion.h2>
             <ul>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">Jerseys</a></motion.li>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">Tees</a></motion.li>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">Joggers</a></motion.li>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">Jeans</a></motion.li>
-              <motion.li initial={footerTextAnimations.hidden} whileInView={footerTextAnimations.visible} viewport={{once: true}}><a href="">Caps</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">Jerseys</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">Tees</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">Joggers</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">Jeans</a></motion.li>
+              <motion.li initial="hidden" whileInView="visible" variants={footerTextAnimations} viewport={{once: true}}><a href="">Caps</a></motion.li>
             </ul>
           </div>
         </div>
@@ -375,7 +386,7 @@ function Catalog() {
 }
 
 
-const heroSectionAnimationVariants = {
+const heroSectionAnimationVariants: Variants = {
   hidden: {
 
   },
@@ -390,7 +401,7 @@ const heroSectionAnimationVariants = {
 
 
 
-const heroImgAnimationVariants = {
+const heroImgAnimationVariants: Variants = {
   hidden: {
     opacity: 0
   },
@@ -403,7 +414,7 @@ const heroImgAnimationVariants = {
   }
 }
 
-const heroTextAnimationVariants = {
+const heroTextAnimationVariants: Variants = {
   hidden: {
     opacity: 0,
     translateY: "50%"
@@ -419,7 +430,7 @@ const heroTextAnimationVariants = {
   }
 }
 
-const newArrivalsVariants = {
+const newArrivalsVariants: Variants = {
   hidden: {
     opacity: 0, 
     translateY: "20%"
