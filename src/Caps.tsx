@@ -16,7 +16,7 @@ export default function Page() {
       imgData: [
         { url: "/assets/brown-cap-sv.webp", width: "902", heigth: "902" },
         { url: "/assets/brown-cap-fv.webp", width: "894", heigth: "902" },
-        { url: "/assets/brown-cap-bv.webp", width: "868", height: "900" }],
+        { url: "/assets/brown-cap-bv.webp", width: "868", heigth: "900" }],
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "One-size-fits-all adjustable plastic snapback closure ensures a snug, custom fit for practically anyone",
