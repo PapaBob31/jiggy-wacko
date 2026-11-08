@@ -10,28 +10,28 @@ import useProductFilters from "./hooks/useProductFilter.ts";
 export default function Page() {
 	const [selectedProduct, setSelectedProduct] =  useState<null|ProductData>(null)
 	const availableFilters: FILTER[] = ["MEN", "WOMEN", "BLACK", "GREY"]
-	
+
 	const productsData: ProductData[] = [
 		{
 			id: "pMTxo",
 			name: "GREY JOGGERS",
-			imgUrls: ["/assets/grey-joggers.png"],
+      imgData: [{ url: "/assets/grey-joggers.webp", width: "736", heigth: "873"}],
 			for: ["MEN", "WOMEN"],
 			color: "GREY",
 			price: 20000,
 			description: "Comfortable cotton fabric joggers for everyone and any occassion",
 			sizes: ["32", "34", "36", "38", "40"]
-		}, 
-		{
-			id: "8T47S",
-			name: "BLACK JOGGERS",
-			imgUrls: ["/assets/black-joggers.png"],
+		},
+    {
+      id: "8T47S",
+      name: "BLACK JOGGERS",
+      imgData: [{url: "/assets/black-joggers.webp", width: "853", heigth: "892"}],
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
 			description: "Comfortable cotton fabric joggers for everyone and any occassion",
 			sizes: ["32", "34", "36", "38", "40"]
-		}, 
+		},
 	]
 	const [productsToDisplay, filter, setFilter] = useProductFilters(productsData) as [ProductData[], FILTER, (arg: FILTER)=>void]
 
@@ -46,10 +46,10 @@ export default function Page() {
 			</ul>
 			<ul className="grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-x-4 sm:gap-y-5 gap-x-2 gap-y-4 mb-8">
 				{productsToDisplay.map((product) => (
-					<ProductCard 
-						product={product} 
-						selectProduct={setSelectedProduct} 
-						key={product.id} 
+					<ProductCard
+						product={product}
+						selectProduct={setSelectedProduct}
+						key={product.id}
 						listStyling="flex flex-nowrap overflow-x-hidden w-full min-h-60 h-[20vw]"
 					/>
 				))}

@@ -4,7 +4,7 @@ import { useState } from "react"
 
 function Header() {
     const [smScreenMenuVisible, setSmScreenMenuVisible] = useState(false)
-    
+
     return (
         <header className="w-screen sm:px-10 px-5 flex sm:gap-20 gap-5 items-center bg-black fixed top-0 py-2 text-white z-30">
             <a href=""><img src="/assets/logo.png" className="w-12"/></a>
@@ -15,7 +15,7 @@ function Header() {
             <div className={`top-0 right-0 ${ smScreenMenuVisible ? "translate-x-0 backdrop-blur-sm" : "max-xl:translate-x-full" }
                     duration-300 fixed xl:static xl:flex gap-8 font-semibold xl:w-fit w-screen bg-transparent xl:h-fit h-screen`}>
                 <nav className={`top-0 right-0 x:py-0 py-4 absolute xl:static xl:flex gap-8 font-semibold xl:w-full w-[70vw] bg-black h-full`}>
-                    <div className="flex justify-end items-start xl:hidden block">
+                    <div className="flex justify-end items-start xl:hidden">
                         <button className="block cursor-pointer p-2 hover:bg-neutral-800" onClick={() => setSmScreenMenuVisible(false)}>
                             <X color="white" size={20} strokeWidth="4"/>
                         </button>

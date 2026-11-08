@@ -14,37 +14,49 @@ export default function Page() {
 		{
 			id: "jTPp5",
 			name: "JERSEY 1",
-			imgUrls: ["/assets/black-jersey-1.png", "/assets/black-jersey-1-back.png"],
+      imgData: [
+        { url: "/assets/black-jersey-1.webp", width: "1254", heigth: "1254" },
+        { url: "/assets/black-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
 			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
-			sizes: ["S", "M", "L", "XL", "2XL"]
-		}, 
+			sizes: ["S", "M", "L", "XL", "2XL"], // "1254" x "1254" "1080" x "1080"
+		},
 		{
 			id: "o3gcN",
 			name: "JERSEY 2",
-			imgUrls: ["/assets/black-jersey-2.png", "/assets//black-jersey-1-back.png"],
+		  imgData: [
+        { url: "/assets/black-jersey-1.webp", width: "1254", heigth: "1254" },
+        { url: "/assets/black-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
 			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
 			sizes: ["S", "M", "L", "XL", "2XL"]
-		}, 
+		},
 		{
 			id: "l0rL7",
 			name: "JERSEY 3",
-			imgUrls: ["/assets/red-jersey-1.png", "/assets/red-jersey-1-back.png"],
+      imgData: [
+        { url: "/assets/red-jersey-1.webp", width: "1080", heigth: "1080" },
+        { url: "/assets/red-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
 			description: "Bold, retro-inspired design crafted for classic, eye-catching streetwear style. Vibrant, fade-resistant color technology that stays sharp wash after wash",
 			sizes: ["S", "M", "L", "XL", "2XL"]
-		}, 
+		},
 		{
 			id: "Dsj1l",
 			name: "JERSEY 4",
-			imgUrls: ["/assets/black-jersey-3.png", "/assets/black-jersey-1-back.png"],
+      imgData: [
+        { url: "/assets/black-jersey-3.webp", width: "1254", heigth: "1254" },
+        { url: "/assets/black-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
@@ -54,7 +66,10 @@ export default function Page() {
 		{
 			id: "3ZO5m",
 			name: "JERSEY 5",
-			imgUrls: ["/assets/red-jersey-1.png", "/assets/jersey-3-back.jpg"],
+      imgData: [
+        { url: "/assets/red-jersey-1.webp", width: "1080", heigth: "1080" },
+        { url: "/assets/red-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
@@ -64,7 +79,10 @@ export default function Page() {
 		{
 			id: "gJzXX",
 			name: "JERSEY 6",
-			imgUrls: ["/assets/black-jersey-4.png", "/assets/black-jersey-1-back.png"],
+			imgData: [
+        { url: "/assets/black-jersey-4.webp", width: "1080", heigth: "1080" },
+        { url: "/assets/black-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			price: 20000,
@@ -74,7 +92,10 @@ export default function Page() {
 		{
 			id: "LNgzt",
 			name: "JERSEY 7",
-			imgUrls: ["/assets/red-jersey-1.png", "/assets/red-jersey-1-back.png"],
+			imgData: [
+        { url: "/assets/red-jersey-1.webp", width: "1080", heigth: "1080" },
+        { url: "/assets/red-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
@@ -84,7 +105,10 @@ export default function Page() {
 		{
 			id: "Qzpz6",
 			name: "JERSEY 8",
-			imgUrls: ["/assets/red-jersey-1.png", "/assets/red-jersey-1-back.png"],
+			imgData: [
+        { url: "/assets/red-jersey-1.webp", width: "1080", heigth: "1080" },
+        { url: "/assets/red-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
@@ -94,7 +118,10 @@ export default function Page() {
 		{
 			id: "iE9mw",
 			name: "JERSEY 9",
-			imgUrls: ["/assets/red-jersey-1.png", "/assets/red-jersey-1-back.png"],
+			imgData: [
+        { url: "/assets/red-jersey-1.webp", width: "1080", heigth: "1080" },
+        { url: "/assets/red-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
@@ -104,7 +131,10 @@ export default function Page() {
 		{
 			id: "gNkVv",
 			name: "JERSEY 10",
-			imgUrls: ["/assets/red-jersey-1.png", "/assets/red-jersey-1-back.png"],
+			imgData: [
+        { url: "/assets/red-jersey-1.webp", width: "1080", heigth: "1080" },
+        { url: "/assets/red-jersey-1-back.webp", width: "1080", heigth: "1080" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "RED",
 			price: 20000,
@@ -118,7 +148,12 @@ export default function Page() {
 	return (<>
 		<section className="py-2">
 			<div className="sm:mt-14 mt-10 bg-black w-full overflow-hidden relative lg:h-[85vh] sm:h-[60vh] h-[50vh] max-sm:max-h-100 sm:mb-8 mb-4">
-				<img src="/assets/jersey-page-hero-img.png" className="object-cover lg:object-top object-top-right absolute z-10 block inset-0 w-full h-full"/>
+        <img
+          src="/assets/jersey-page-hero-img.webp"
+          width="1717"
+          height="916"
+          fetchPriority="high"
+          className="object-cover lg:object-top object-top-right absolute z-10 block inset-0 w-full h-full" />
 				{<div className="bg-linear-to-r sm:from-black from-black/50 from-10% lg:to-60% to-50% to-transparent inset-0 absolute z-10"></div>}
 				<div className="sm:px-10 px-5 absolute sm:bottom-20 bottom-0 z-20 text-white mb-4 xl:w-[40vw] sm:w-[60vw] w-[80vw]">
 					<div className="font-black-ops xl:text-3xl lg:text-2xl sm:text-lg text-base font-semibold sm:mb-4 mb-2">INTRODUCING</div>
@@ -138,10 +173,10 @@ export default function Page() {
 			</ul>
 			<ul className="sm:px-10 px-5 grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-x-4 sm:gap-y-5 gap-x-2 gap-y-4 mb-8">
 				{productsToDisplay.map((product) => (
-					<ProductCard 
-						product={product} 
-						selectProduct={setSelectedProduct} 
-						key={product.id} 
+					<ProductCard
+						product={product}
+						selectProduct={setSelectedProduct}
+						key={product.id}
 						listStyling="flex flex-nowrap overflow-x-hidden xl:h-[20vw] md:h-[30vw] sm:h-[35vw] h-[50vw]"
 					/>
 				))}

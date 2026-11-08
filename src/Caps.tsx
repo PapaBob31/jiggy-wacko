@@ -13,16 +13,23 @@ export default function Page() {
 		{
 			id: "aT0N4",
 			name: "FOAM TRUCKER CAP",
-			imgUrls: ["/assets/brown-cap-sv.png", "/assets/brown-cap-fv.png", "/assets/brown-cap-bv.png"],
+      imgData: [
+        { url: "/assets/brown-cap-sv.webp", width: "902", heigth: "902" },
+        { url: "/assets/brown-cap-fv.webp", width: "894", heigth: "902" },
+        { url: "/assets/brown-cap-bv.webp", width: "868", height: "900" }],
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "One-size-fits-all adjustable plastic snapback closure ensures a snug, custom fit for practically anyone",
 			price: 7000
-		}, 
+		},
 		{
 			id: "cN32q",
 			name: "FOAM CAMO CAP",
-			imgUrls: ["/assets/camo-cap-sv.png", "/assets/camo-cap-fv.png", "/assets/camo-cap-bv.png"],
+      imgData: [
+        { url: "/assets/camo-cap-sv.webp", width: "904", heigth: "906" },
+        { url: "/assets/camo-cap-fv.webp", width: "900", heigth: "900" },
+        { url: "/assets/camo-cap-bv.webp", width: "868", heigth: "900" }
+      ],
 			for: ["MEN", "WOMEN"],
 			color: "BLACK",
 			description: "One-size-fits-all adjustable plastic snapback closure ensures a snug, custom fit for practically anyone",
@@ -32,13 +39,13 @@ export default function Page() {
 
 	return (<>
 		<section className="sm:px-10 px-5 py-2 mt-22 sm:ml-10">
-			<h1 className="font-bold text-3xl">CAPS</h1>			
+			<h1 className="font-bold text-3xl">CAPS</h1>
 			<ul className="grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-x-2 gap-y-4 mt-10 mb-8">
 				{productsData.map((product) => (
-					<ProductCard 
-						product={product} 
-						selectProduct={setSelectedProduct} 
-						key={product.id} 
+					<ProductCard
+						product={product}
+						selectProduct={setSelectedProduct}
+						key={product.id}
 						listStyling="flex flex-nowrap overflow-x-hidden w-full sm:h-60 h-45"
 					/>
 				))}
